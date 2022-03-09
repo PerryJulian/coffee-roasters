@@ -1,65 +1,49 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Layout from 'components/layout'
+import LeadModule from 'components/leadModule/leadModule'
+import mobileLeadImage from 'assets/home/mobile/image-hero-coffeepress.jpg'
+import tabletLeadImage from 'assets/home/tablet/image-hero-coffeepress.jpg'
+import desktopLeadImage from 'assets/home/desktop/image-hero-coffeepress.jpg'
+import ImageOnTopList from 'components/lists/ImageOnTopList'
+
+const leadModuleData = {
+  title: 'Great coffee made simple.',
+  description: "Start your mornings with the world's best coffess. Try our expertly curated artisan coffees from our best roasters delivered directly to your door, at your scheule.",
+  ctaText: 'Create your plan',
+  ctaLink: '/subscribe',
+  mobileImage: mobileLeadImage,
+  tabletImage: tabletLeadImage,
+  desktopImage: desktopLeadImage
+}
+
+const ImageOnTopListData = {
+  ctaText: 'Create your plan',
+  ctaLink: '/subscribe',
+  title: 'How it works',
+  hideTitle: false,
+  darkBackground: false,
+  showTimeline: true,
+  fullWidth: false,
+  items: [
+    {
+      title: 'Pick your coffee',
+      description: 'Select from our evolving range of artisan coffees. Our beans are ethically sourced and we pay fair prices for them. There are new coffees in all profiles every month for you to try out.'
+    },
+    {
+      title: 'Choose the frequency',
+      description: 'Customize your order frequency, quantity, even your roast style and grind type. Pause, skip or cancel your subscription with no commitment through our online portal.'
+    },
+    {
+      title: 'Receive and enjoy!',
+      description: 'We ship your package within 48 hours, freshly roasted. Sit back and enjoy award-winning world-class coffees curated to provide a distinct tasting experience.'
+    }
+  ]
+}
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+    <Layout>
+      <LeadModule data={leadModuleData}/>
+      <ImageOnTopList data={ImageOnTopListData}/>
+    </Layout>
   )
 }

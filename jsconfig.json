@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/components/*": ["/components/*"],
+            "@breakpoints": ["/styles/utils/breakpoints.js"],
+            "@typography": ["/styles/utils/typography.js"]
+        }
+    }
+}
