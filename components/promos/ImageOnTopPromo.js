@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { Description, ImageOnTopWrapper, Index, Media, Title, Date, ContactField } from "./ImageOnTopPromo-styles";
-import Timeline from "components/timeline/timeline"
+import Timeline from '../timeline/Timeline';
 
 export default function ImageOnTopPromo(props) {
     const showTimeline = props.showTimeline
