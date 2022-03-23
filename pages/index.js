@@ -22,7 +22,6 @@ const ImageOnTopListData = {
   hideTitle: false,
   darkBackground: false,
   showTimeline: true,
-  fullWidth: false,
   items: [
     {
       title: 'Pick your coffee',

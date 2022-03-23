@@ -3,18 +3,13 @@ import { Description, ImageOnTopWrapper, Index, Media, Title, Date, ContactField
 import Timeline from '@/components/timeline/Timeline';
 
 export default function ImageOnTopPromo(props) {
-    const showTimeline = props.showTimeline
-    const lastItem = props.lastItem
-    const { media, contact, description } = props.data
-
-    console.log(props);
-
-    console.log(media);
+    const { darkBackground, lastItem, showTimeline } = props
+    const { media, title, contact, description } = props.data
 
     return (
        <ImageOnTopWrapper>
            {showTimeline ? 
-            <Timeline lastItem={lastItem}/> :
+            <Timeline darkBackground={darkBackground} lastItem={lastItem}/> :
             ""
            }
             {props.data.media ? 
@@ -26,8 +21,8 @@ export default function ImageOnTopPromo(props) {
                 </Media> : 
                 <Index>{`0${props.index + 1}`}</Index>
             }
-            <Title>{props.data.title}</Title>
-            {description ? <Description>{props.data.description}</Description> : ''}
+            <Title darkBackground={darkBackground}>{title}</Title>
+            {description ? <Description darkBackground={darkBackground}>{description}</Description> : ''}
             {contact ? <DateComponent info={contact}/> : ''}
        </ImageOnTopWrapper>
     )

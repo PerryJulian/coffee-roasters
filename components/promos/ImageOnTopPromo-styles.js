@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import breakpoints from '@breakpoints'
-
+import { getDarkTextColor } from '@/components/styles/utils/colors'
 
 export const Description = styled.p`
     font-family: Barlow;
@@ -8,22 +8,25 @@ export const Description = styled.p`
     line-height: 2.5rem;
     margin-top: 24px;
 
-    color: ${({ theme }) => theme.textColors.dark};
+    color: ${props => props.darkBackground ? '#FFFFFF': getDarkTextColor};
+
+    @media ${breakpoints.device.lg} {
+        font-size: 1.6rem;
+    }
 `
 
 export const ImageOnTopWrapper = styled.div`
+    align-items: center;
     display: flex;
     flex-direction: column;
     text-align: center;
-
-    ${props => props.mobileImage ? props.mobileImage : ''}
-    align-items: center;
 
     &:not(:first-of-type) {
         margin-top: 56px;
     }
 
     @media ${breakpoints.device.md} {
+        align-items: unset;
         text-align: left;
 
         &:not(:first-of-type) {
@@ -55,15 +58,20 @@ export const Media = styled.div`
     position: relative;
     width: 50px;
     height: 50px;
+    margin-bottom: 26px;
 
 `
 
-export const Title = styled.h2`
+export const Title = styled.h4`
     margin-top: 24px;
     font-family: Fraunces;
     font-size: 2.8rem;
 
-    color: ${({ theme }) => theme.textColors.dark};
+    color: ${props => props.darkBackground ? '#FFFFFF': getDarkTextColor};
+
+    @media ${breakpoints.device.md} {
+        min-height: 84px;
+    }
 
     @media ${breakpoints.device.lg} {
         max-width: 255px;
@@ -74,5 +82,10 @@ export const Date = styled.div`
 `
 
 export const ContactField = styled.div`
-    font-size: 2.6rem;
+    font-size: 1.6rem;
+    line-height: 26px;
+
+    @media ${breakpoints.device.md} {
+        font-size: 1.6rem;
+    }
 `

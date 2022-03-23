@@ -1,6 +1,7 @@
 import styled from 'styled-components'
-import { BodyCopy, TitleFour } from '@typography'
+import { TitleFour } from '@typography'
 import breakpoints from '@breakpoints'
+import { getDarkBlue } from '@/components/styles/utils/colors'
 
 export const Cta = styled.div`
     margin-top: 80px;
@@ -14,17 +15,22 @@ export const Cta = styled.div`
 
 export const ImageOnTopListWrapper = styled.section`
     align-items: center;
-    /* background-color: ${({ theme }) => theme.colors.darkBlue}; */
     display: flex;
     flex-direction: column;
-    margin: 120px ${props => props.fullWidth ? '-25px' : '0'};
-
-    ${props => props.fullWidth ? 'border-radius:  10px;' : ''}
-    ${props => props.darkBackground ? `background-color: ${({ theme }) => theme.colors.darkBlue};` : '' }
+    margin: 120px ${props => props.darkBackground ? '-25px' : '0'};
+    background-color: ${props => props.darkBackground && getDarkBlue};
+    ${props => props.darkBackground && 'border-radius:  10px;'}
+    ${props => props.darkBackground && 'padding: 0 24px;'}
 
     @media ${breakpoints.device.md} {
         align-items: unset;
-        margin-top: 144px;
+        margin: 144px ${props => props.darkBackground ? '-40px' : '0'};
+        ${props => props.darkBackground && 'padding: 90px 40px 70px;'}
+    }
+
+    @media ${breakpoints.device.lg} {
+        margin: 144px 0;
+        ${props => props.darkBackground && 'padding: 100px 85px;'}
     }
 `
 
@@ -35,10 +41,10 @@ export const ItemsWrapper = styled.div`
         align-items: unset;
         display: flex;
         flex-direction: row;
-        margin-top: 55px;
+        margin-top: ${props => props.darkBackground ? '0' : '55px'};
     }
     @media ${breakpoints.device.lg} {
-        margin-top: 95px;
+        margin-top: ${props => props.darkBackground ? '0' : '95px'};
     }
 `
 

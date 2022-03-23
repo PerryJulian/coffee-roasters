@@ -12,3 +12,34 @@ export const textColors = {
     dark: 'var(--color-secondary)',
     offWhite: 'var(--color-tertiary)'
 }
+
+// Helpers 
+export const getCreamColor = ({
+    theme: {
+        colors: { cream }
+    }
+}) => cream
+
+export const getDarkBlue = ({
+    theme: {
+        colors: { darkBlue }
+    }
+}) => darkBlue
+
+export const getDarkTextColor = ({
+    theme: {
+        textColors: { dark }
+    }
+}) => dark
+
+export const getPrimaryColor = ({
+    theme: {
+        colors: { primary }
+    }
+}) => primary
+
+export const getTertiaryColor = ({
+    theme: {
+        colors: { tertiary}
+    }
+}) => tertiary

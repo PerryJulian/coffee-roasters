@@ -47,7 +47,7 @@ export const Main = styled.main`
     }
 
     @media ${breakpoints.device.lg} {
-        padding-left: 80px;
-        padding-right: 80px;
+        padding-left: 0;
+        padding-right: 0;
     }
 `

@@ -44,7 +44,7 @@ export const NavContainer = styled.nav`
     }
 
     @media ${breakpoints.device.lg} {
-        padding: 40px 80px 25px; 
+        padding: 40px 0 25px; 
     }
 `
 

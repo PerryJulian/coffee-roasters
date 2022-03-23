@@ -4,34 +4,30 @@ import { ButtonPrimary } from 'styles/theme/buttons'
 import Link from 'next/link'
 
 export default function ImageOnTopList(props) {
-    const hideTitle = props.data.hideTitle
-    const items = props.data.items
-    const fullWidth = props.data.fullWidth
-    const showTimeline = props.data.showTimeline
-    const { style } = props.data
+    const { darkBackground, title, ctaText, ctaLink, items, hideTitle, showTimeline } = props.data
 
     return (
-       <ImageOnTopListWrapper fullWidth={fullWidth}>
+       <ImageOnTopListWrapper darkBackground={darkBackground}>
            {hideTitle
                 ? '' 
-                : <Title>{props.data.title}</Title>
+                : <Title>{title}</Title>
             }
-           <ItemsWrapper>
+           <ItemsWrapper darkBackground={darkBackground}>
                {props.data.items.map((item, index) => {
                    let lastItem = false
 
                    if (index == items.length - 1) {
                         lastItem = true
                    }
-                   return <ImageOnTopPromo style={style} key={index} index={index} data={item} showTimeline={showTimeline} lastItem={lastItem}/>
+                   return <ImageOnTopPromo key={index} index={index} data={item} showTimeline={showTimeline} lastItem={lastItem} darkBackground={darkBackground}/>
                })}
            </ItemsWrapper>
            {props.data.ctaLink 
                         ? 
                             <Cta>
-                                <Link href={props.data.ctaLink}>
+                                <Link href={ctaLink}>
                                     <ButtonPrimary>
-                                       {props.data.ctaText}
+                                       {ctaText}
                                     </ButtonPrimary>
                                 </Link>
                             </Cta>

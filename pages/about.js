@@ -20,7 +20,6 @@ const leadModuleData = {
     title: 'Our headquarters',
     hideTitle: false,
     darkBackground: false,
-    fullWidth: false,
     items: [
       {
         title: 'United Kingdom',

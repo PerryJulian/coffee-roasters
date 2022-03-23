@@ -1,11 +1,11 @@
 import { TimelineWrapper, TimelineItem } from "./Timeline-styles"
 
 export default function Timeline(props) {
-    const lastItem = props.lastItem
+    const { lastItem, darkBackground } = props
 
     return (
-       <TimelineWrapper lastItem={lastItem}>
-           <TimelineItem/>
+       <TimelineWrapper darkBackground={darkBackground} lastItem={lastItem}>
+           <TimelineItem darkBackground={darkBackground}/>
        </TimelineWrapper>
     )
 }
